@@ -8,15 +8,35 @@ gsap.registerPlugin(useGSAP);
 
 function Hero() {
   useGSAP(() => {
-    gsap.to("#herosec", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#parent",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
+    ScrollTrigger.matchMedia({
+      "(min-width: 1024px)": () => {
+        gsap.to("#herosec", {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: "#parent",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+            pin: true,
+            pinSpacing: true,
+          },
+        });
+      },
+
+      "(max-width: 1023px)": () => {
+        gsap.fromTo(
+          "#herosec",
+          { opacity: 1 },
+          {
+            opacity: 0.3,
+            scrollTrigger: {
+              trigger: "#parent",
+              start: "top top",
+              end: "bottom top",
+              scrub: 1,
+            },
+          },
+        );
       },
     });
   }, []);
@@ -28,10 +48,14 @@ function Hero() {
     >
       <main
         className="
+        opacity:0.3
+        lg:opacity:1
         bg-red-500
-        w-[calc(100%-16px)]
-        h-[calc(100%-16px)]
-        rounded-2xl
+        lg:w-[calc(100%-16px)]
+        lg:h-[calc(100%-16px)]
+        w-screen
+        h-screen
+        lg:rounded-2xl
         flex items-center justify-center
         px-6 md:px-10
         "
@@ -61,9 +85,7 @@ function Hero() {
             <br />
             health intelligence
           </p>
-          <p
-            className="mt-6 max-w-xl text-sm sm:text-base md:text-lg text-center leading-relaxed" >
-
+          <p className="mt-6 max-w-xl text-sm sm:text-base md:text-lg text-center leading-relaxed">
             100+ lab tests. Every year. Detect early signs of 1,000+ .
             <br />
             conditions. All for only $17/month

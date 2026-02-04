@@ -7,56 +7,60 @@ gsap.registerPlugin(useGSAP);
 
 function Howsec() {
   useGSAP(() => {
-    ScrollTrigger.matchMedia({
-      "(min-width: 975px)": () => {
-        const imgtl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#howsec",
-            start: "top top",
-            end: "+=200%",
-            scrub: 1,
-            pin: true,
-            markers: true,
-          },
-        });
 
-        gsap.fromTo(
-          "#connecting-line",
-          { scaleX: 0 },
-          {
-            scaleX: 1,
-            ease: "none",
+      ScrollTrigger.matchMedia({
+        "(min-width: 975px)": () => {
+          const imgtl = gsap.timeline({
             scrollTrigger: {
               trigger: "#howsec",
-              start: "top center",
-              end: "bottom center",
-              scrub: true,
+              start: "top top",
+              end: "+=200%",
+              scrub: 1,
+              pin: true,
+              markers: true,
             },
-          },
-        );
+          });
 
-        imgtl.to(
-          ["#imgscroll2", "#detailsscroll2", "#number2"],
-          {
+          gsap.fromTo(
+            "#connecting-line",
+            { scaleX: 0 },
+            {
+              scaleX: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: "#howsec",
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+              },
+            },
+          );
+
+          imgtl.to(
+            ["#imgscroll2", "#detailsscroll2", "#number2"],
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+            },
+            0,
+          );
+
+          imgtl.to(["#imgscroll3", "#detailsscroll3", "#number3"], {
             y: 0,
             opacity: 1,
             scale: 1,
             filter: "blur(0px)",
-          },
-          0,
-        );
-
-        imgtl.to(["#imgscroll3", "#detailsscroll3", "#number3"], {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          filter: "blur(0px)",
-        });
-      },
+          });
+        },
+      });
     });
-  });
+;
 
-  return (
+  
+
+  return ( 
     <>
       <div id="howsec">
         <p className="text-3xl ml-[10%]">How It Works</p>
@@ -67,7 +71,7 @@ function Howsec() {
             className="fixed left-0 top-1/2 w-full top-[58%] h-[2px] origin-left scale-x-0 bg-gradient-to-r from-orange-400 from-90% to-transparent to-100% z-0"
           ></div>
 
-          <div className="grid grid-cols-3 gap-6 relative z-10">
+          <div className="grid sm:grid-cols-3 gap-6 relative z-10">
             <div className="flex flex-col gap-4">
               <img src="/hall.png" className="w-full rounded-2xl" />
 

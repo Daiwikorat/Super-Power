@@ -61,7 +61,7 @@ export default function Steps() {
   
   return (
     <>
-      <div id = "Images" className="relative lg:pt-10 lg:h-[500vh] h-auto w-full flex flex-col justify-start items-start">
+      <div id = "Images" className="relative gap-5 lg:pt-[20vh] lg:h-[500vh] h-auto w-full flex flex-col justify-start items-start">
         {Data.map((item, index) => (
           <Step
             id={`img${index}`}
