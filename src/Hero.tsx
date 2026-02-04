@@ -1,4 +1,4 @@
-import Join from "./Join.tsx";
+import Join from "./JoinButton.tsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -11,7 +11,7 @@ function Hero() {
     gsap.to("#herosec", {
       opacity: 0,
       scrollTrigger: {
-        trigger: "main",
+        trigger: "#parent",
         start: "top top",
         end: "bottom top",
         scrub: 1,
@@ -20,33 +20,67 @@ function Hero() {
       },
     });
   }, []);
+
   return (
-    <>
-      <div
-        id="herosec"
-        className="w-full max-w-[90%] md:max-w-[70%] flex flex-col items-start text-left md:items-center md:text-center"
+    <section
+      id="parent"
+      className="h-[100svh] w-full flex items-center justify-center"
+    >
+      <main
+        className="
+        bg-red-500
+        w-[calc(100%-16px)]
+        h-[calc(100%-16px)]
+        rounded-2xl
+        flex items-center justify-center
+        px-6 md:px-10
+        "
       >
-        <p className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold">
-          Unlock your new <br className="hidden md:block" />
-          health intelligence
-        </p>
-
-        <div className="w-full md:w-[70%] lg:w-[60%] mt-6">
-          <p className="text-sm sm:text-sm md:text-lg">
-            100+ lab tests. Every year. Detect early signs of 1,000+ conditions.
-            All for only $17/month
+        <div
+          id="herosec"
+          className="
+          w-full
+          max-w-5xl
+          flex flex-col
+          items-center
+          text-center
+        "
+        >
+          <p
+            className="
+            font-semibold
+            text-2xl
+            sm:text-3xl
+            md:text-4xl
+            lg:text-5xl
+            xl:text-6xl
+            leading-tight
+            "
+          >
+            Unlock your new
+            <br />
+            health intelligence
           </p>
+          <p
+            className="mt-6 max-w-xl text-sm sm:text-base md:text-lg text-center leading-relaxed" >
+
+            100+ lab tests. Every year. Detect early signs of 1,000+ .
+            <br />
+            conditions. All for only $17/month
+          </p>
+
+          <div className="mt-8">
+            <Join />
+          </div>
+
+          <img
+            src="https://cdn.prod.website-files.com/63792ff4f3d6aa3d62071b61/689c37321e74752df5514537_hsa-fsa.svg"
+            className="mt-8 w-24 md:w-28"
+            alt="HSA FSA"
+          />
         </div>
-
-        <Join />
-
-        <img
-          src="https://cdn.prod.website-files.com/63792ff4f3d6aa3d62071b61/689c37321e74752df5514537_hsa-fsa.svg"
-          className="mt-6 w-24 md:w-32"
-          alt="HSA FSA"
-        />
-      </div>
-    </>
+      </main>
+    </section>
   );
 }
 

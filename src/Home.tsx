@@ -15,14 +15,8 @@ function Home() {
   
   return (
     <>
-      <main className="bg-red-500 min-h-[60vh] md:min-h-[80vh] lg:min-h-[90vh] rounded-lg flex flex-col items-center justify-center m-[1%] p-6 overflow-y-auto sm:overflow-hidden">
-        <Hero/>
-      </main>
-
-      <div id="howsec" className="py-24">
-          <Howsec/>
-      </div>
-
+      <Hero/>
+      <Howsec/>
       <Membership/>
 
       <div className="relative flex justify-center my-12">
