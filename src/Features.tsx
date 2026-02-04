@@ -2,8 +2,9 @@ import FeaturesData from "./data/features";
 import Feature from "./Feature";
 
 function Features() {
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div id = "Feat" className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {FeaturesData.map((item, index) => {
         return (
           <Feature

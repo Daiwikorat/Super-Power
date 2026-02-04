@@ -24,30 +24,30 @@ const Data: DataLayout[] = [
     },
     day: "Today",
   },
-  // {
-  //   url: "https://cdn.prod.website-files.com/63792ff4f3d6aa3d62071b61/68df1a0132ce434cf3c4c4a4_Frame%201597885626-p-500.avif",
-  //   title: "Understand your results",
-  //   description:
-  //     "Your results in a clear, easy-to-read dashboard with each biomarker explained.",
-  //   points: {
-  //     point1: "No medical jargon or PDFs",
-  //     point2: "Understand your results",
-  //     point3: "Upload past medical records",
-  //   },
-  //   day: "Day 5",
-  // },
-  // {
-  //   url: "https://cdn.prod.website-files.com/63792ff4f3d6aa3d62071b61/68df1a2cc8140ea958b0a37c_Frame%201597885625-p-500.avif",
-  //   title: "Take action",
-  //   description:
-  //     "Your personalized health plan gives you step-by-step how to improve your health.",
-  //   points: {
-  //     point1: "Custom supplement plan",
-  //     point2: "Actionable recommendations",
-  //     point3: "Clear next steps",
-  //   },
-  //   day: "Day 10",
-  // },
+  {
+    url: "https://cdn.prod.website-files.com/63792ff4f3d6aa3d62071b61/68df1a0132ce434cf3c4c4a4_Frame%201597885626-p-500.avif",
+    title: "Understand your results",
+    description:
+      "Your results in a clear, easy-to-read dashboard with each biomarker explained.",
+    points: {
+      point1: "No medical jargon or PDFs",
+      point2: "Understand your results",
+      point3: "Upload past medical records",
+    },
+    day: "Day 5",
+  },
+  {
+    url: "https://cdn.prod.website-files.com/63792ff4f3d6aa3d62071b61/68df1a2cc8140ea958b0a37c_Frame%201597885625-p-500.avif",
+    title: "Take action",
+    description:
+      "Your personalized health plan gives you step-by-step how to improve your health.",
+    points: {
+      point1: "Custom supplement plan",
+      point2: "Actionable recommendations",
+      point3: "Clear next steps",
+    },
+    day: "Day 10",
+  },
 ];
 
 export default Data;

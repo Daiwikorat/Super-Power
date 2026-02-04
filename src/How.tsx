@@ -9,7 +9,9 @@ export default function How() {
         </p>
       </div>
 
-      <section className="bg-red-200 relative items-center">
+      <section
+        className="bg-red-100 relative items-center"
+      >
         <Steps />
       </section>
     </div>

@@ -8,50 +8,60 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 export default function Steps() {
-//   useGSAP(() => {
-//     const imgtl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: "#Images",
-//         start: "top top",
-//         end: "bottom bottom",
-//         scrub: 1,
-//         pin: true,
-//         markers: true,
-//       },
-//     });
+  useGSAP(() => {
+    ScrollTrigger.matchMedia({
+      "(min-width: 1024px)": () => {
+        const imgtl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#Images",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 2,
+            pin: true,
+            pinSpacing:false,
+            markers: true,
+          },
+        });
 
-//     imgtl.fromTo(
-//       "#img0",
-//       { scale: 1, opacity: 1, },
-//       { scale: 0.3, opacity: 0, duration: 1 },
-//     );
+        imgtl.fromTo(
+          "#img0",
+          { scale: 1, opacity: 1 },
+          { scale: 0.8, opacity: 0, duration: 1 },
+        );
 
-//     imgtl.fromTo(
-//       "#img1",
-//       { scale: 0, opacity: 0, y:100 },
-//       { scale: 1, opacity: 1, y: 0, duration: 1 },
-//     );
-//     imgtl.fromTo(
-//       "#img1",
-//       { scale: 1, opacity: 1},
-//       { scale: 0.3, opacity: 0, duration: 1 },
-//     );
+        imgtl.fromTo(
+          "#img1",
+          { scale: 1, opacity: 0, y: 400 },
+          { scale: 1, opacity: 1, y: 0, duration: 1 },
+          "-=0.6",
+        );
 
-//     imgtl.fromTo(
-//       "#img2",
-//       { scale: 0, opacity: 0, y: 100 },
-//       { scale: 1, opacity: 1, y: 0, duration: 1 },
-//     );
-//     imgtl.fromTo(
-//       "#img2",
-//       { scale: 1, opacity: 1 },
-//       { scale: 0.3, opacity: 0, duration: 1 },
-//     );
-// });
+        imgtl.fromTo(
+          "#img1",
+          { scale: 1, opacity: 1 },
+          { scale: 0.8, opacity: 0, duration: 1 },
+        );
 
+        imgtl.fromTo(
+          "#img2",
+          { scale: 1, opacity: 0, y: 400 },
+          { scale: 1, opacity: 1, y: 0, duration: 1 },
+          "-=0.6",
+        );
+
+        imgtl.fromTo(
+          "#img2",
+          { scale: 1, opacity: 1 },
+          { scale: 0.8, opacity: 0.3, duration: 1 },
+        );
+      },
+    });
+  }, []);
+
+  
   return (
     <>
-      <div id="Images" className="relative h-[500vh] flex justify-center">
+      <div id = "Images" className="relative lg:pt-10 lg:h-[500vh] h-auto w-full flex flex-col justify-start items-start">
         {Data.map((item, index) => (
           <Step
             id={`img${index}`}

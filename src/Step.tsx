@@ -13,35 +13,37 @@ interface props {
 
 export default function Step(props: props) {
   return (
-    <>
-      <div
-        id={props.id}
-        className="absolute mt-10 flex flex-col [@media(min-width:950px)]:flex-row justify-center items-start md:items-center lg:gap-2 gap-6 lg:gap-10 px-6 md:px-12 md:px-12 md:px-12 md:px-12 md:px-12 lg:px-24 xl:px-40 2xl:px-60"
-      >
-        <img
-          src={props.url}
-          className="[@media(max-width:950px)]:w-[100%] lg:min-w-[40%] md:w-[60%] rounded-2xl"
-          alt="Image URL no response OR URL Wrong"
-        />
+    <div
+      id={props.id}
+      className="lg:absolute relative w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8 px-6 lg:px-24 xl:px-24"
+    >
+      <img
+        src={props.url}
+        alt="Image URL no response OR URL Wrong"
+        className="w-full lg:w-[420px] flex-none rounded-2xl object-contain"
+      />
 
-        <div className="text-sm md:text-base lg:text-lg">{props.day}</div>
+      <div className="bg-orange-600 justify-center items-center flex w-20 text-sm md:text-base lg:text-lg text-center lg:text-left mt-0 lg:mt-0 text-white">
+        {props.day}
+      </div>
 
-        <div className="mt-2">
-          <div className="text-xl md:text-2xl lg:text-3xl">
-            <div className="lg:text-3xl text-2xl md: text-xl font-semibold">
-              {props.title}
-            </div>
-            <div className="mt-2 text-xs md:text-sm lg:text-base">
-              {props.description}
-            </div>
-            <ul className="mt-3 list-disc pl-5 text-xs md:text-sm lg:text-base">
-              <li>{props.points.point1}</li>
-              <li>{props.points.point2}</li>
-              <li>{props.points.point3}</li>
-            </ul>
+      <div className="flex-1 min-w-0 mt-0 lg:mt-0">
+        <div className="text-xl md:text-2xl lg:text-3xl">
+          <h3 className="sm:text-4xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+            {props.title}
+          </h3>
+
+          <div className="mt-2 text-xs sm:text-lg md:text-sm lg:text-base break-words">
+            {props.description}
           </div>
+
+          <ul className="mt-3 sm:text-lg list-disc pl-5 text-xs md:text-sm lg:text-base">
+            <li>{props.points.point1}</li>
+            <li>{props.points.point2}</li>
+            <li>{props.points.point3}</li>
+          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
