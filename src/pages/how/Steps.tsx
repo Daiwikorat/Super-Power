@@ -1,5 +1,5 @@
 import Step from "./Step.tsx";
-import Data from "./data/data.ts";
+import Data from "../../data/data.ts";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -19,7 +19,6 @@ export default function Steps() {
             scrub: 2,
             pin: true,
             pinSpacing:false,
-            markers: true,
           },
         });
 
@@ -61,7 +60,7 @@ export default function Steps() {
   
   return (
     <>
-      <div id = "Images" className="relative lg:pt-10 lg:h-[500vh] h-auto w-full flex flex-col justify-start items-start">
+      <div id = "Images" className="relative gap-5 lg:pt-[20vh] lg:h-[500vh] h-auto w-full flex flex-col justify-start items-start">
         {Data.map((item, index) => (
           <Step
             id={`img${index}`}

@@ -4,13 +4,13 @@ export default function How() {
   return (
     <div className="min-h-screen">
       <div className="w-full mt-[60px] mb-[40px]">
-        <p className="text-center font-semibold text-2xl lg:text-5xl md:text-4xl sm:text-3xl">
+        <p className="text-center font-semibold text-3xl lg:text-5xl md:text-4xl sm:text-3xl">
           Get clarity at every step
         </p>
       </div>
 
       <section
-        className="bg-red-100 relative items-center"
+        className="relative items-center"
       >
         <Steps />
       </section>

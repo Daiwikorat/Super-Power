@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home.tsx";
-import How from "./How.tsx";
+import Home from "./pages/Home.tsx";
+import How from "./pages/how/How.tsx";
 
 function App() {
   return (
