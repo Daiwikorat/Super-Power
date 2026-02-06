@@ -1,11 +1,11 @@
 import Features from "./Features";
-import Join from "./JoinButton";
+import Join from "../../components/JoinButton";
 export default function Membership() {
   return (
     <>
       <section
         id="membership"
-        className="relative items-start mt-40 bg-red-100 w-full pt-20 flex flex-col md:flex-row gap-10 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40 max-w-7xl mx-auto"
+        className="relative items-start mt-40 w-full pt-20 flex flex-col md:flex-row gap-10 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40 max-w-7xl mx-auto"
       >
         <div
           id="mem"

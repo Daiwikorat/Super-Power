@@ -1,4 +1,3 @@
-// ./data/data.ts
 export interface DataLayout {
   url: string;
   title: string;

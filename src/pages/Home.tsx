@@ -1,12 +1,12 @@
 // Home.tsx
-import "./App.css";
+import "../App.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
-import Membership from "./Membership.tsx";
-import Howsec from "./Howsec.tsx";
-import Hero from "./Hero.tsx";
+import Membership from "../sections/memberships/Membership.tsx";
+import Howsec from "../sections/Howsec.tsx";
+import Hero from "../sections/Hero.tsx";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);

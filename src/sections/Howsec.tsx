@@ -17,7 +17,10 @@ function Howsec() {
               end: "+=200%",
               scrub: 1,
               pin: true,
+<<<<<<< HEAD:src/Howsec.tsx
               markers: true,
+=======
+>>>>>>> c685877 (Feat: Latest Build):src/sections/Howsec.tsx
             },
           });
 

@@ -1,5 +1,5 @@
 import Step from "./Step.tsx";
-import Data from "./data/data.ts";
+import Data from "../../data/data.ts";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -19,7 +19,6 @@ export default function Steps() {
             scrub: 2,
             pin: true,
             pinSpacing:false,
-            markers: true,
           },
         });
 
