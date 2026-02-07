@@ -7,63 +7,54 @@ gsap.registerPlugin(useGSAP);
 
 function Howsec() {
   useGSAP(() => {
+    ScrollTrigger.matchMedia({
+      "(min-width: 975px)": () => {
+        const imgtl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#howsec",
+            start: "top top",
+            end: "+=200%",
+            scrub: 1,
+            pin: true,
+          },
+        });
 
-      ScrollTrigger.matchMedia({
-        "(min-width: 975px)": () => {
-          const imgtl = gsap.timeline({
+        gsap.fromTo(
+          "#connecting-line",
+          { scaleX: 0 },
+          {
+            scaleX: 1,
+            ease: "none",
             scrollTrigger: {
               trigger: "#howsec",
-              start: "top top",
-              end: "+=200%",
-              scrub: 1,
-              pin: true,
-<<<<<<< HEAD:src/Howsec.tsx
-              markers: true,
-=======
->>>>>>> c685877 (Feat: Latest Build):src/sections/Howsec.tsx
+              start: "top center",
+              end: "bottom center",
+              scrub: true,
             },
-          });
+          },
+        );
 
-          gsap.fromTo(
-            "#connecting-line",
-            { scaleX: 0 },
-            {
-              scaleX: 1,
-              ease: "none",
-              scrollTrigger: {
-                trigger: "#howsec",
-                start: "top center",
-                end: "bottom center",
-                scrub: true,
-              },
-            },
-          );
-
-          imgtl.to(
-            ["#imgscroll2", "#detailsscroll2", "#number2"],
-            {
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              filter: "blur(0px)",
-            },
-            0,
-          );
-
-          imgtl.to(["#imgscroll3", "#detailsscroll3", "#number3"], {
+        imgtl.to(
+          ["#imgscroll2", "#detailsscroll2", "#number2"],
+          {
             y: 0,
             opacity: 1,
             scale: 1,
             filter: "blur(0px)",
-          });
-        },
-      });
+          },
+          0,
+        );
+
+        imgtl.to(["#imgscroll3", "#detailsscroll3", "#number3"], {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        });
+      },
     });
-;
-
-  
-
-  return ( 
+  });
+  return (
     <>
       <div id="howsec">
         <p className="text-3xl ml-[10%]">How It Works</p>

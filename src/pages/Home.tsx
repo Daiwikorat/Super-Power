@@ -6,18 +6,19 @@ import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
 import Membership from "../sections/memberships/Membership.tsx";
 import Howsec from "../sections/Howsec.tsx";
+import Planner from "../sections/planner/Planner.tsx";
 import Hero from "../sections/Hero.tsx";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 
 function Home() {
-  
   return (
     <>
-      <Hero/>
-      <Howsec/>
-      <Membership/>
+      <Hero />
+      {/* <Howsec/> */}
+      <Planner />
+      <Membership />
 
       <div className="relative flex justify-center my-12">
         <Link
