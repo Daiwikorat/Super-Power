@@ -26,52 +26,71 @@ function Planner() {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  useGSAP(() => {
-    ScrollTrigger.matchMedia({
-      "(min-width: 975px)": () => {
-        const imgtl = gsap.timeline({
+  useGSAP(
+    () => {
+      ScrollTrigger.matchMedia({
+        "(min-width: 975px)": () => {
+          const imgtl = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#howsec",
+              start: "top top",
+              end: "bottom top",
+              scrub: 1,
+              pin: true,
+            },
+          });
+
+          imgtl.to("#horline", {
+            scaleX: 1,
+            transformOrigin: "left center",
+            duration: 3,
+            ease: "none",
+          });
+
+          imgtl.to(
+            ["#img2", "#details2", "#number2"],
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+              duration: 1,
+            },
+            0,
+          );
+
+          imgtl.to(
+            ["#img3", "#details3", "#number3"],
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+              duration: 1,
+            },
+            1,
+          );
+        },
+      });
+
+      if (isSM) {
+        gsap.to("#verline", {
+          scaleY: 1.8,
+          transformOrigin: "top center",
+          duration: 1,
           scrollTrigger: {
             trigger: "#howsec",
             start: "top top",
             end: "bottom top",
-            scrub: 1,
-            pin: true,
+            scrub: true,
+            markers: true,
           },
         });
+      }
+    },
 
-        imgtl.to("#horline", {
-          scaleX: 1,
-          transformOrigin: "left center",
-          duration: 3,
-          ease: "none",
-        });
-
-        imgtl.to(
-          ["#img2", "#details2", "#number2"],
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            filter: "blur(0px)",
-            duration: 1,
-          },
-          0,
-        );
-
-        imgtl.to(
-          ["#img3", "#details3", "#number3"],
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            filter: "blur(0px)",
-            duration: 1,
-          },
-          1,
-        );
-      },
-    });
-  });
+    { scope: "#howsec", dependencies: [isSM] },
+  );
 
   return (
     <>
@@ -95,7 +114,7 @@ function Planner() {
             {isSM && (
               <div
                 id="verline"
-                className="absolute w-[3px] h-full ml-[2vh] min-[546px]:ml-[4%]  bg-[linear-gradient(to_bottom,#f97316_0%,#f97316_80%,transparent_100%)] -z-10"
+                className="absolute w-[3px] h-full ml-[2vh] min-[546px]:ml-[4%] scale-y-[0.1] bg-[linear-gradient(to_bottom,#f97316_0%,#f97316_80%,transparent_100%)] -z-10"
               ></div>
             )}
 
