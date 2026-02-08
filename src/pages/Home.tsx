@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Link } from "react-router-dom";
 import Membership from "../sections/memberships/Membership.tsx";
-import Howsec from "../sections/Howsec.tsx";
+// import Howsec from "../sections/Howsec.tsx";
 import Planner from "../sections/planner/Planner.tsx";
 import Hero from "../sections/Hero.tsx";
 
